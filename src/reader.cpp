@@ -1,10 +1,17 @@
 #include <iostream>
+#include <fstream>
 #include "reader.h"
 
 
+
 bool Reader::import_file(std::string filename) {
+    std::ifstream file(filename.c_str());
+    if (!file.good()) {
+        return false;
+    }
+
     std::cout<<"TODO: Import File"<<std::endl;
-    return false;
+    return true;
 }
 
 

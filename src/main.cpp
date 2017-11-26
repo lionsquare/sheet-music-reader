@@ -12,6 +12,10 @@ int main(int argc, char* argv[]) {
 
     ArgParser AP;
     string filename = AP.parse_args(argc, argv);
+    if (filename == "") {
+        return -1;
+    }
+
 
     Reader R;
     R.import_file(filename);
