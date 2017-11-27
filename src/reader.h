@@ -2,7 +2,7 @@
 
 class Reader {
     public:
-        bool import_file(std::string filename);
+        int import_file(std::string filename);
         bool process(void);
         void print_results(void);
     private:

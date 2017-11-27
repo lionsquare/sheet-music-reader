@@ -7,18 +7,22 @@
 using namespace cv;
 
 
-bool Reader::import_file(std::string filename) {
+int Reader::import_file(std::string filename) {
     std::ifstream file(filename.c_str());
     if (!file.good()) {
-        return false;
+        return -1;
+    }
+
+
+    Mat image;
+    image = imread(filename.c_str(), 1);
+    if (!image.data) {
+        return -2;
     }
 
     std::cout<<"TODO: Import File"<<std::endl;
 
-    Mat image;
-    image = imread(filename.c_str(), 1);
-
-    return true;
+    return 0;
 }
 
 
