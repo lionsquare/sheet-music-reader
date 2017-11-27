@@ -1,11 +1,12 @@
 #include <iostream>
-#include <opencv2/highgui.hpp>
+//#include <opencv2/highgui.hpp>
+//#include <opencv2/opencv.hpp>
 
 #include "argparser.h"
 #include "reader.h"
 
 using namespace std;
-using namespace cv;
+//using namespace cv;
 int main(int argc, char* argv[]) {
 
     // TODO add support for multiple files
@@ -22,6 +23,6 @@ int main(int argc, char* argv[]) {
     R.process();
     R.print_results();
 
-    Mat A;
+ //   Mat A;
     return 0;
 }

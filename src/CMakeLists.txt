@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 2.8)
-project( DisplayImage )
+project( sheet-music-reader )
 find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 add_executable( sheet-music-reader main.cpp reader.cpp argparser.cpp)
-target_link_libraries( sheet-music-reader ${OpenCV_LIBS} )
+target_link_libraries( sheet-music-reader ${OpenCV_LIBDS})
+
+
