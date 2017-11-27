@@ -48,3 +48,6 @@ bool Reader::set_image(Mat M) {
     Reader::image = M;
     return Reader::image.empty();
 }
+Mat Reader::get_image(void) {
+    return Reader::image;
+}

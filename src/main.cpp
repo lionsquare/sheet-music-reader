@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "argparser.h"
 #include "reader.h"
 
@@ -8,26 +9,28 @@ int main(int argc, char* argv[]) {
     // TODO add support for multiple files
 
     ArgParser AP;
-    string filename = AP.parse_args(argc, argv);
-    if (filename == "") {
-        cout<<"Must provide image file as argument"<<endl;
+    vector<string> filenames = AP.parse_args(argc, argv);
+    if (filenames.size() == 0) {
+        cout<<"Must provide at least one image file as argument"<<endl;
         return -1;
     }
 
 
     Reader R;
-    R.display_image();
-    int err_code = R.import_file(filename);
-    if (err_code == -1) {
-        cout<<"File "<<filename<<" does not exist"<<endl;
-    }
-    else if (err_code == -2) {
-        cout<<"No data in "<<filename<<endl;
-    }
+    for (int a=0; a<filenames.size(); a++) {
+    
+        int err_code = R.import_file(filenames[a]);
+        if (err_code == -1) {
+            cout<<"File "<<filenames[a]<<" does not exist"<<endl;
+        }
+        else if (err_code == -2) {
+            cout<<"No data in "<<filenames[a]<<endl;
+        }
 
-    R.display_image();
-    R.process();
-    R.print_results();
+        R.display_image();
+        R.process();
+        R.print_results();
+    }
 
     return 0;
 }

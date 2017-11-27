@@ -5,5 +5,3 @@ find_package( GTest REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 add_executable( test-sheet-music-reader ../run_tests.cpp ../reader.cpp ../argparser.cpp )
 target_link_libraries( test-sheet-music-reader ${OpenCV_LIBS} GTest::GTest GTest::Main)
-
-

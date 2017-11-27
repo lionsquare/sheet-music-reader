@@ -8,10 +8,7 @@ class Reader {
         void print_results(void);
         bool display_image(void);
         bool set_image(cv::Mat);
+        cv::Mat get_image(void);
     private:
         cv::Mat image;
-        //string file_name;
-        //Reader::open_file();
-        //Reader::import_image();
-        //Reader::close_file();
 };

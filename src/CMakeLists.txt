@@ -4,5 +4,3 @@ find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 add_executable( sheet-music-reader main.cpp reader.cpp argparser.cpp)
 target_link_libraries( sheet-music-reader ${OpenCV_LIBS})
-
-
