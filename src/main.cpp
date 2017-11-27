@@ -16,6 +16,7 @@ int main(int argc, char* argv[]) {
 
 
     Reader R;
+    R.display_image();
     int err_code = R.import_file(filename);
     if (err_code == -1) {
         cout<<"File "<<filename<<" does not exist"<<endl;
@@ -24,6 +25,7 @@ int main(int argc, char* argv[]) {
         cout<<"No data in "<<filename<<endl;
     }
 
+    R.display_image();
     R.process();
     R.print_results();
 

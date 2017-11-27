@@ -3,6 +3,7 @@
 echo "Building Sheet Music Reader..."
 cd ../build
 cmake ../src .
+make
 cd ../src
 echo ""
 
