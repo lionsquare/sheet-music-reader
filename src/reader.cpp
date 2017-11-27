@@ -3,7 +3,6 @@
 #include "reader.h"
 #include <opencv2/core.hpp>
 #include <opencv2/highgui.hpp>
-#include <opencv2/core/mat.hpp>
 
 using namespace cv;
 
@@ -17,7 +16,7 @@ bool Reader::import_file(std::string filename) {
     std::cout<<"TODO: Import File"<<std::endl;
 
     Mat image;
-  //  image = imread(filename.c_str(), 1);
+    image = imread(filename.c_str(), 1);
 
     return true;
 }

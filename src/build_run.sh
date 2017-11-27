@@ -4,7 +4,6 @@ echo "Building Sheet Music Reader..."
 cd ../build
 cmake ../src .
 cd ../src
-#g++ main.cpp reader.cpp argparser.cpp -lopencv_core -o sheet-music-reader 
 echo ""
 
 echo "Running Sheet Music Reader..."
@@ -12,10 +11,13 @@ echo "Running Sheet Music Reader..."
 echo ""
 
 echo "Building Test Suite..."
-g++ run_tests.cpp argparser.cpp reader.cpp /usr/lib/libgtest_main.a /usr/lib/libgtest.a -lpthread -lopencv_core -o tests/run_tests
+cd tests/
+cmake .
+make
+cd ..
 echo ""
 
 echo "Testing Sheet Music Reader..."
-./tests/run_tests
+./tests/test-sheet-music-reader
 echo ""
 
