@@ -5,7 +5,7 @@
 #include "staff.h"
 #include "staff_segr.h"
 
-
+int const BINARY_THRESHOLD = 0;
 int const MAX_BINARY_VALUE = 255;
 
 using namespace cv;
@@ -37,9 +37,8 @@ bool Reader::preprocess(void) {
 
     // TODO pick a more mathemagical way of thresholding
     // Threshold the image at 50% intensity
-    int threshold_type = 0;
-    threshold(Reader::image, Reader::image, MAX_BINARY_VALUE/2, 
-            MAX_BINARY_VALUE, threshold_type);
+    threshold(Reader::image, Reader::image, 2*MAX_BINARY_VALUE/3, 
+            MAX_BINARY_VALUE, BINARY_THRESHOLD);
     
     return true;
 }

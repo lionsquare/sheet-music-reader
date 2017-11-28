@@ -1,0 +1,8 @@
+Proprocessing:
+1. Threshold at some percentage
+2. Train on a bunch of images to fiure out what the 1D distribution of intensities usually looks like, then use that to transform the image and then threshold
+
+Segmentation:
+1. subtract the vertical peaks and then look for horzontal peaks
+
+
