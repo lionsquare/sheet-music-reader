@@ -11,6 +11,9 @@ echo "Running Sheet Music Reader..."
 ../build/sheet-music-reader ../ignite.png
 echo ""
 
+echo "Testing Memory with Valgrind"
+valgrind ../build/sheet-music-reader ../ignite.png --no-display
+
 echo "Building Test Suite..."
 cd tests/
 cmake .

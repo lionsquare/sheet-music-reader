@@ -31,11 +31,36 @@ TEST (ReaderTests, DisplayEmpty) {
     ASSERT_EQ(false, R.display_image());
 }
 
+// If image is empty/not initialized, preprocess should return false
+TEST (ReaderTests, PreProcessEmpty) {
+    Reader R;
+    ASSERT_EQ(false, R.preprocess());
+}
+
+// If image is empty/not initialized, process should return false
+TEST (ReaderTests, ProcessEmpty) {
+    Reader R;
+    ASSERT_EQ(false, R.process());
+}
 
 // If image is not empty, display should return true
 TEST (ReaderTests, DisplayInitialized) {
     Reader R;
     R.set_image(cv::Mat::zeros(10, 10, CV_64F));
     ASSERT_EQ(true, R.display_image());
+}
+
+// If image is not empty, preprocess should return true
+TEST (ReaderTests, PreProcessInitialized) {
+    Reader R;
+    R.set_image(cv::Mat::zeros(10, 10, CV_64F));
+    ASSERT_EQ(true, R.preprocess());
+}
+
+// If image is not empty, process should return true
+TEST (ReaderTests, ProcessInitialized) {
+    Reader R;
+    R.set_image(cv::Mat::zeros(10, 10, CV_64F));
+    ASSERT_EQ(true, R.process());
 }
 

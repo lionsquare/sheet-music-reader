@@ -5,6 +5,7 @@
 class Reader {
     public:
         int import_file(std::string filename);
+        bool preprocess(void);
         bool process(void);
         void print_results(void);
         bool display_image(void);
