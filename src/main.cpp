@@ -38,6 +38,10 @@ int main(int argc, char* argv[]) {
         if (DISPLAY_FLAG) {
             R.display_image();
         }
+        R.preprocess();
+        if (DISPLAY_FLAG) {
+            R.display_image();
+        }
         R.process();
         R.print_results();
         

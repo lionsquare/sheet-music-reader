@@ -6,6 +6,8 @@
 #include "staff_segr.h"
 
 
+int const MAX_BINARY_VALUE = 255;
+
 using namespace cv;
 
 
@@ -28,6 +30,16 @@ bool Reader::preprocess(void) {
         return false;
     }
 
+    // convert to grey
+    if (Reader::image.channels() > 1) {
+        cvtColor(Reader::image, Reader::image, CV_BGR2GRAY);
+    }
+
+    // TODO pick a more mathemagical way of thresholding
+    // Threshold the image at 50% intensity
+    int threshold_type = 0;
+    threshold(Reader::image, Reader::image, MAX_BINARY_VALUE/2, 
+            MAX_BINARY_VALUE, threshold_type);
     
     return true;
 }
@@ -59,7 +71,7 @@ bool Reader::display_image(void) {
 
     namedWindow("Display Image", WINDOW_AUTOSIZE);
     imshow("Display Image", Reader::image);
-    waitKey(500);
+    waitKey(1500);
     return true;
 }
 
