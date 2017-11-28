@@ -1,8 +1,11 @@
 #include <iostream>
 #include <fstream>
-#include "reader.h"
 #include <opencv2/core.hpp>
 #include <opencv2/highgui.hpp>
+#include "reader.h"
+#include "staff.h"
+#include "staff_segr.h"
+
 
 using namespace cv;
 
@@ -23,6 +26,10 @@ int Reader::import_file(std::string filename) {
 
 
 bool Reader::process(void) {
+    // TODO add some type of preprocessing engine
+    
+    
+
     std::cout<<"TODO: Process"<<std::endl;
     return false;
 }

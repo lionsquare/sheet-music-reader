@@ -2,6 +2,8 @@
 #include <vector>
 #include "argparser.h"
 #include "reader.h"
+#include "staff.h"
+#include "staff_segr.h"
 
 using namespace std;
 int main(int argc, char* argv[]) {

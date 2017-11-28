@@ -2,13 +2,13 @@
 
 echo "Building Sheet Music Reader..."
 cd ../build
-cmake ../src .
+cmake ../src
 make
 cd ../src
 echo ""
 
 echo "Running Sheet Music Reader..."
-../build/sheet-music-reader /home/moon/Projects/sheet-music-reader/ignite.png
+../build/sheet-music-reader ../ignite.png
 echo ""
 
 echo "Building Test Suite..."
